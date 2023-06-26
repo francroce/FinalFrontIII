@@ -24,7 +24,7 @@ const handleChangeTheme = () => {
       <Layout>
         <Navbar/>
           <Routes>
-            <Route path="/odontologos" element={<Home/>}/>
+            <Route path="/" element={<Home/>}/>
             <Route path="/favoritos" element={<Favoritos/>}/>
             <Route path="/contacto" element={<Contacto/>}/>
             <Route path="/odontologos/:id" element={<Profile/>}/>    
