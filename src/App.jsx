@@ -15,7 +15,6 @@ const [theme, setTheme] = useState(themes.light);
 const handleChangeTheme = () => {
   if (theme === themes.dark) setTheme(themes.light)
   if (theme === themes.light) setTheme(themes.dark)
-  console.log(theme)
 }
 
   return (

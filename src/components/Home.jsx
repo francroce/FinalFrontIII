@@ -21,12 +21,11 @@ if (favs.some((fav) => fav.id === odontologo.id)) {
     newFavs = favs.filter((fav) => fav.id !== odontologo.id)
 } else {
     newFavs = [...favs, odontologo]
+
 }
 setFavs(newFavs)
 localStorage.setItem('odontologosFavs', JSON.stringify(newFavs))
 }
-
-console.log(favs)
 
 useEffect(() => {
     getPersons()
@@ -38,7 +37,8 @@ useEffect(() => {
         <div className="flex flex-wrap gap-4 justify-center">
             <Card 
             personas={personas}
-            onClick={addToFavs}/>
+            onClick={addToFavs}
+            />
         </div>
     </div>
   )

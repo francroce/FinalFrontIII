@@ -8,7 +8,6 @@ const Navbar = () => {
 
 const {theme, handleChangeTheme} = useContext(ThemeContext)
 const [isOpen,SetIsOpen] = useState(false)
-console.log(theme.background)
 
   return (   
         <div className='shadow-md w-full top-0 left-0'>

@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 const Profile = () => {
 
 const params = useParams()
-console.log(params.id)
 const [odontologo,setOdontologo] = useState([])
 async function getOdontologo(){
     const response= await (await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)).json()

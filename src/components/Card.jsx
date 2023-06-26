@@ -8,17 +8,26 @@ const Card = (props) => {
     JSON.parse(localStorage.getItem('odontologosFavs') || '[]')
     )
   
-    const [fillColor, setFillColor] = useState()
 
-  useEffect(() => {
-    props.personas.forEach((persona) => {
-      if (favs.some((fav) => fav.id === persona.id)) {
-        setFillColor("red");
-      } else {
-        setFillColor("grey");
-      }
-    });
-  }, [favs, props.personas]);
+  const handleToggleLiked = (userId) => {
+    setLiked((prevLiked) => ({
+      ...prevLiked,
+      [userId]: !prevLiked[userId],
+    }));
+  };
+
+
+  const [liked,setLiked]= useState({})
+
+useEffect(()=>{
+  const valorInicial= {}
+  favs.forEach((user) => {
+    valorInicial[user.id]= "red"
+  });
+  setLiked(valorInicial)
+  console.log(favs)
+},[])
+
 
   return (
       <>
@@ -26,7 +35,7 @@ const Card = (props) => {
           return (
             <div  key={persona.id} className="relative">
             <div onClick={() => props.onClick?.(persona)} className="cursor-pointer absolute top-3 right-3 w-5 h-5 z-20">
-             <HeartIcon fill={fillColor}/>
+             <HeartIcon onClick={()=> handleToggleLiked(persona.id)} fill={liked[persona.id] ? "red" : "grey"}/>
             </div>
             
             <Link to={`odontologos/${persona.id}`}>
