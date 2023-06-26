@@ -29,7 +29,7 @@ const [isOpen,SetIsOpen] = useState(false)
                     <div onClick={()=>SetIsOpen(!isOpen)} className='absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7'>
                         {isOpen ? <XMarkIcon/>: <Bars3BottomRightIcon/>}
                     </div>
-                    <ul className={`md:flex md:items-center gap-4 flex flex-col md:flex-row md:pb-0 pb-12 absolute ${theme.background} ${theme.font} md:static md:gap-6 md:z-auto z-30 left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${isOpen ? 'top-24' : 'top-[-200px]'}`}>
+                    <ul className={`md:flex md:items-center gap-4 flex flex-col md:flex-row md:pb-0 pb-12 absolute ${theme.background} ${theme.font} md:static md:gap-6 md:z-auto z-30 left-0 w-full md:w-auto md:pl-0 pl-9 ${isOpen ? 'top-24' : 'top-[-200px]'}`}>
                         <Link to='./'>Inicio</Link>
                         <Link to='./favoritos'>favoritos</Link>
                         <Link to='./contacto'><button className='btn bg-gradient-to-r from-[#A32A2A] to-[#DE3838] text-white font-semibold px-3 py-1 rounded duration-500 md:static'>Contacto</button></Link>
