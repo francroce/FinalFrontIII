@@ -11,7 +11,7 @@ import ThemeContext, { themes } from './context/context'
 
 function App() {
 
-const [theme, setTheme] = useState(themes.light);
+const [theme, setTheme] = useState(themes.dark);
 const handleChangeTheme = () => {
   if (theme === themes.dark) setTheme(themes.light)
   if (theme === themes.light) setTheme(themes.dark)
@@ -27,6 +27,7 @@ const handleChangeTheme = () => {
             <Route path="/favoritos" element={<Favoritos/>}/>
             <Route path="/contacto" element={<Contacto/>}/>
             <Route path="/odontologos/:id" element={<Profile/>}/>    
+            <Route path="favoritos/odontologos/:id" element={<Profile/>}/>    
           </Routes>
         <Footer/>
       </Layout>
