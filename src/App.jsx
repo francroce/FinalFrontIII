@@ -7,31 +7,29 @@ import Favoritos from "./components/Favoritos"
 import Contacto from "./components/Contacto"
 import Profile from "./components/Profile"
 import Layout from "./components/Layout"
-import ThemeContext, { themes } from './context/context'
+import ThemeProvider from "./context/ThemeContext"
+import { ListProvider } from "./context/ListContext"
+
 
 function App() {
 
-const [theme, setTheme] = useState(themes.dark);
-const handleChangeTheme = () => {
-  if (theme === themes.dark) setTheme(themes.light)
-  if (theme === themes.light) setTheme(themes.dark)
-}
-
   return (
     <>
-    <ThemeContext.Provider value={{ theme, handleChangeTheme }}>
-      <Layout>
-        <Navbar/>
-          <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/favoritos" element={<Favoritos/>}/>
-            <Route path="/contacto" element={<Contacto/>}/>
-            <Route path="/odontologos/:id" element={<Profile/>}/>    
-            <Route path="favoritos/odontologos/:id" element={<Profile/>}/>    
-          </Routes>
-        <Footer/>
-      </Layout>
-    </ThemeContext.Provider>
+      <ThemeProvider>
+        <ListProvider>
+          <Layout>
+            <Navbar/>
+              <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/favoritos" element={<Favoritos/>}/>
+                <Route path="/contacto" element={<Contacto/>}/>
+                <Route path="/odontologos/:id" element={<Profile/>}/>    
+                <Route path="favoritos/odontologos/:id" element={<Profile/>}/>    
+              </Routes>
+            <Footer/>
+          </Layout>
+        </ListProvider>
+      </ThemeProvider>
     </>
   )
 }

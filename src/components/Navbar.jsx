@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
-import ThemeContext from '../context/context'
+import { ThemeContext } from "../context/ThemeContext"
 import {XMarkIcon,Bars3BottomRightIcon,MoonIcon,SunIcon} from '@heroicons/react/24/solid'
 
 
@@ -10,8 +10,8 @@ const {theme, handleChangeTheme} = useContext(ThemeContext)
 const [isOpen,SetIsOpen] = useState(false)
 
   return (   
-        <div className='shadow-md w-full top-0 left-0'>
-                <div className='md:flex items-center `${theme.background}` `${theme.font}` justify-between py-4 md:px-10 px-7'>
+        <div className={`shadow-md w-full relative top-0 left-0`}>
+                <div className={`md:flex items-center ${theme.background} ${theme.font} justify-between py-4 md:px-10 px-7`}>
   
                     <div className='font-bold text-xl cursor-pointer flex items-center gap-1'>
                         <Link to={"/"}>                      
