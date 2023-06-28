@@ -21,22 +21,22 @@ export const ListProvider = (props) => {
     localStorage.setItem('odontologosFavs', JSON.stringify(newFavs))
     }
 
-  const [personas,setPersonas] = useState([])
+  const [dentists,setDentists] = useState([])
 
-  async function getPersons(){
+  async function getDentists(){
       const response= await (await fetch("https://jsonplaceholder.typicode.com/users")).json()
-      setPersonas(response)
+      setDentists(response)
   }
 
   useEffect(()=>{
-    getPersons()
+    getDentists()
   },[])
 
 
   const value = {
     favs,
     addToFavs,
-    personas
+    dentists
   }
 
   return (
