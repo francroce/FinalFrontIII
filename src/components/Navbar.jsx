@@ -31,7 +31,7 @@ const [isOpen,SetIsOpen] = useState(false)
                     </div>
                     <ul className={`md:flex md:items-center gap-4 flex flex-col md:flex-row md:pb-0 pb-12 absolute ${theme.background} ${theme.font} md:static md:gap-6 md:z-auto z-30 left-0 w-full md:w-auto md:pl-0 pl-9 ${isOpen ? 'top-24' : 'top-[-200px]'}`}>
                         <Link to='./'>Inicio</Link>
-                        <Link to='./favoritos'>favoritos</Link>
+                        <Link to='./favoritos'>Favoritos</Link>
                         <Link to='./contacto'><button className='btn bg-gradient-to-r from-[#A32A2A] to-[#DE3838] text-white font-semibold px-3 py-1 rounded duration-500 md:static'>Contacto</button></Link>
                         <button onClick={handleChangeTheme} className="w-7 h-7">{theme.background === "bg-bg-theme-light" ?  <MoonIcon/> : <SunIcon/>}</button>
                     </ul>
