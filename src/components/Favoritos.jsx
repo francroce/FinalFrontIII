@@ -7,7 +7,7 @@ const Favoritos = () => {
 const {favs, addToFavs} = useContext(ListContext)  
 
 return (
-    <div className="flex justify-center items-center flex-col w-3/4 mx-auto gap-6 py-10">
+    <div className="flex justify-center items-center flex-col w-3/4 mx-auto gap-6 pt-10 pb-20">
         <h1 className="font-bold text-4xl text-center">¡Tus odontologos favoritos!</h1>
         <div className="flex flex-wrap gap-4 justify-center text-center">
           {favs.length > 0 ? <Card dentists={favs} onClick={addToFavs} /> : <span> ops! parece que no tienes odontologos favoritos</span>}

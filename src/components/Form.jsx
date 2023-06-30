@@ -45,7 +45,7 @@ const Form = () => {
             />
 
             <textarea name="consulta" placeholder='Escriba su consulta aqui...' id="" cols="30" rows="10"
-            className='h-28 pl-2 bg-transparent border-b-2 border-[#A32A2A]'
+            className='h-28 pl-2 bg-transparent border-b-2 border-[#A32A2A] resize-none'
             value={consulta}
             onChange={(e)=> setConsulta(e.target.value)}/>
 
